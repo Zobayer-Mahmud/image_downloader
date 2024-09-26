@@ -2,14 +2,14 @@ group 'com.ko2ic.imagedownloader'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.5.31'
+    ext.kotlin_version = '2.0.20' // Define the Kotlin version
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.4'
+        classpath "com.android.tools.build:gradle:8.2.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -26,6 +26,9 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 33
+
+    // Adding the namespace attribute as required by AGP 8.0.0+
+    namespace 'com.ko2ic.imagedownloader'
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
